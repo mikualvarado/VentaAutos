@@ -1,0 +1,52 @@
+<div class="card border-dark">
+  <div class="card-header bg-dark text-white">
+    <h4 class="mb-0">Detalle del Vehículo {{ vehiculo?.codigo }}</h4>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <tbody>
+              <tr *ngIf="vehiculo">
+                <td><strong>Marca:</strong></td>
+                <td>{{ vehiculo.marca }}</td>
+              </tr>
+              <tr *ngIf="vehiculo">
+                <td><strong>Modelo:</strong></td>
+                <td>{{ vehiculo.modelo }}</td>
+              </tr>
+              <tr *ngIf="vehiculo">
+                <td><strong>Año:</strong></td>
+                <td>{{ vehiculo.anio }}</td>
+              </tr>
+              <tr *ngIf="vehiculo">
+                <td><strong>Kilometraje:</strong></td>
+                <td>{{ vehiculo.kilometraje }}</td>
+              </tr>
+              <tr *ngIf="vehiculo">
+                <td><strong>Precio:</strong></td>
+                <td>{{ vehiculo.precio }}</td>
+              </tr>
+              <tr *ngIf="vehiculo">
+                <td><strong>Calificación:</strong></td>
+                <td>
+                  <app-calificacion [calificacion]="vehiculo.calificacion" (accionClick)="imprimir($event)"></app-calificacion>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <img [src]="vehiculo?.foto" class="img-fluid" style="max-height: 300px; width: auto" />
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer bg-dark text-white">
+    <button [routerLink]="['/vehiculos']" class="btn btn-light">
+      <i class="fa fa-chevron-left mr-2" aria-hidden="true"></i>Regreso
+    </button>
+  </div>
+</div>

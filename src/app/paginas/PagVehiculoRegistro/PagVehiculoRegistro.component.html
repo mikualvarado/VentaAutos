@@ -1,0 +1,113 @@
+<div class="card border-dark">
+  <div class="card-header bg-dark text-white">
+    <h4>Creación de Vehículo</h4>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12">
+        <form class="table-responsive" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <td><strong>Código:</strong></td>
+                <td>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="codigo"
+                    formControlName="codigo"
+                  />
+                  <span
+                    class="text-danger"
+                    *ngIf="formulario.controls['codigo'].errors?.required"
+                    >Valor requerido</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Marca:</strong></td>
+                <td>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="marca"
+                    formControlName="marca"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Modelo:</strong></td>
+                <td>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="modelo"
+                    formControlName="modelo"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Año:</strong></td>
+                <td>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="anio"
+                    formControlName="anio"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Kilometraje:</strong></td>
+                <td>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="kilometraje"
+                    formControlName="kilometraje"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Precio:</strong></td>
+                <td>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="precio"
+                    formControlName="precio"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Calificación:</strong></td>
+                <td>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="calificacion"
+                    formControlName="calificacion"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Imagen:</strong></td>
+                <td>
+                  <input
+                    type="string"
+                    class="form-control"
+                    name="imagen"
+                    formControlName="imagen"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="card-footer bg-dark text-white">
+            <button class="btn btn-success btnSend mt-3 mx-3">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
